@@ -13,6 +13,7 @@
     "playground:build": "tsc -p playground -w",
     "playground": "concurrently \"npm run build:watch\" \"npm run playground:build\" \"npm run lite\"",
     "test": "karma start",
+    "testtravis": "karma start --single-run",
     "patch": "npm version patch && cd src && npm version patch && cd ../ && cd dist && npm version patch"
   },
   "repository": {
