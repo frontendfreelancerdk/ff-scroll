@@ -13,7 +13,7 @@
   "sudo": "required",
   "group": "stable",
   "script": [
-    "ng test --watch false"
+    "npm run test"
   ],
   "node_js": "8.11.2",
   "language": "node_js",
@@ -23,8 +23,6 @@
     "npm publish dist"
   ],
   "before_script": [
-    "npm install -g angular-cli-ghpages@0.5.2",
-    "npm install -g @angular/cli@1.7.3",
     "npm install -g karma@2.0.0"
   ],
   "before_install": [
