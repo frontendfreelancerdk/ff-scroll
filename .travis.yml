@@ -1,4 +1,39 @@
-language: node_js
-sudo: false
-node_js:
-- '4.2.1'
+{
+  "os": "linux",
+  "apt": {
+    "sources": [
+      "google-chrome"
+    ],
+    "packages": [
+      "google-chrome-stable",
+      "google-chrome-beta"
+    ]
+  },
+  "dist": "trusty",
+  "sudo": "required",
+  "group": "stable",
+  "script": [
+    "ng test --watch false"
+  ],
+  "node_js": "8.11.2",
+  "language": "node_js",
+  "after_success": [
+    "npm run build",
+    "npm run patch",
+    "npm publish dist"
+  ],
+  "before_script": [
+    "npm install -g angular-cli-ghpages@0.5.2",
+    "npm install -g @angular/cli@1.7.3",
+    "npm install -g karma@2.0.0"
+  ],
+  "before_install": [
+    "export CHROME_BIN=/usr/bin/google-chrome",
+    "export DISPLAY=:99.0",
+    "sh -e /etc/init.d/xvfb start",
+    "sudo apt-get update",
+    "sudo apt-get install -y libappindicator1 fonts-liberation",
+    "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
+    "sudo dpkg -i google-chrome*.deb"
+  ]
+}

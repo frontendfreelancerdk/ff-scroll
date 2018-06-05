@@ -5,19 +5,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { FFScrollModule } from '../src';
 
-import { SampleModule }  from '@angular/ff-scroll';
 
 @Component({
   selector: 'app',
-  template: `<sample-component></sample-component>`
+  template: `<div ffScroll></div>`
 })
 class AppComponent {}
 
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [ AppComponent ],
-  imports: [ BrowserModule, SampleModule ]
+  imports: [ BrowserModule, FFScrollModule ]
 })
 class AppModule {}
 

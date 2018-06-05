@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src\scroll.directive.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> scroll.directive.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function(global){global.wrappers['C:/Projects/ff-scroll/src/scroll.directive.ts']=[<span class="fstat-no" title="function not covered" >function(require,module,exports,__dirname,__filename){</span> "use strict";
+<span class="cstat-no" title="statement not covered" >var __decorate = (this &amp;&amp; this.__decorate) || <span class="fstat-no" title="function not covered" >function (decorators, target, key, desc) {</span></span>
+<span class="cstat-no" title="statement not covered" >    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span></span>
+    else <span class="cstat-no" title="statement not covered" >for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="cstat-no" title="statement not covered" >if (d = decorators[i]) <span class="cstat-no" title="statement not covered" >r = (c &lt; 3 ? d(r) : c &gt; 3 ? d(target, key, r) : d(target, key)) || r;</span></span></span>
+<span class="cstat-no" title="statement not covered" >    return c &gt; 3 &amp;&amp; r &amp;&amp; Object.defineProperty(target, key, r), r;</span>
+};
+<span class="cstat-no" title="statement not covered" >var __metadata = (this &amp;&amp; this.__metadata) || <span class="fstat-no" title="function not covered" >function (k, v) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") <span class="cstat-no" title="statement not covered" >return Reflect.metadata(k, v);</span></span>
+};
+<span class="cstat-no" title="statement not covered" >Object.defineProperty(exports, "__esModule", { value: true });</span>
+<span class="cstat-no" title="statement not covered" >var core_1 = require("@angular/core");</span>
+<span class="cstat-no" title="statement not covered" >var scroll_service_1 = require("./scroll.service");</span>
+<span class="cstat-no" title="statement not covered" >var ScrollDirective = (<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="fstat-no" title="function not covered" >    function ScrollDirective(_el, scrollService) {</span>
+<span class="cstat-no" title="statement not covered" >        this._el = _el;</span>
+<span class="cstat-no" title="statement not covered" >        this.scrollService = scrollService;</span>
+<span class="cstat-no" title="statement not covered" >        this.cssClass = true;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    ScrollDirective.prototype.ngOnInit = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (!this.ffOptions) {</span>
+<span class="cstat-no" title="statement not covered" >            this.ffOptions = {};</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.item = this.scrollService.subscribeElement(this._el.nativeElement, this.ffOptions);</span>
+    };
+<span class="cstat-no" title="statement not covered" >    ScrollDirective.prototype.ngOnChanges = <span class="fstat-no" title="function not covered" >function (changes) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (changes.ffOptions.currentValue &amp;&amp; this._el.nativeElement &amp;&amp; this.item) {</span>
+<span class="cstat-no" title="statement not covered" >            this.scrollService.changeOptions(this.item, this.ffOptions);</span>
+        }
+    };
+<span class="cstat-no" title="statement not covered" >    __decorate([</span>
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], ScrollDirective.prototype, "ffOptions", void 0);
+<span class="cstat-no" title="statement not covered" >    __decorate([</span>
+        core_1.HostBinding('class.ff-scroll'),
+        __metadata("design:type", Object)
+    ], ScrollDirective.prototype, "cssClass", void 0);
+<span class="cstat-no" title="statement not covered" >    ScrollDirective = __decorate([</span>
+        core_1.Directive({
+            selector: '[ffScroll]'
+        }),
+        __metadata("design:paramtypes", [core_1.ElementRef, scroll_service_1.ScrollService])
+    ], ScrollDirective);
+<span class="cstat-no" title="statement not covered" >    return ScrollDirective;</span>
+}());
+<span class="cstat-no" title="statement not covered" >exports.ScrollDirective = ScrollDirective;</span>
+&nbsp;
+},'src/scroll.directive.ts',{"@angular/core":"C:/Projects/ff-scroll/node_modules/@angular/core/bundles/core.umd.js","./scroll.service":"C:/Projects/ff-scroll/src/scroll.service.ts"}];})(this);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2Nyb2xsLmRpcmVjdGl2ZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInNjcm9sbC5kaXJlY3RpdmUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFBQSxzQ0FBMEc7QUFDMUcsbURBQStDO0FBSy9DO0lBS0kseUJBQW9CLEdBQWUsRUFBUyxhQUE0QjtRQUFwRCxRQUFHLEdBQUgsR0FBRyxDQUFZO1FBQVMsa0JBQWEsR0FBYixhQUFhLENBQWU7UUFIeEMsYUFBUSxHQUFHLElBQUksQ0FBQztJQUloRCxDQUFDO0lBRUQsa0NBQVEsR0FBUjtRQUNJLEVBQUUsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDLENBQUM7WUFDbEIsSUFBSSxDQUFDLFNBQVMsR0FBRyxFQUFFLENBQUM7UUFDeEIsQ0FBQztRQUNELElBQUksQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDLGFBQWEsQ0FBQyxnQkFBZ0IsQ0FBQyxJQUFJLENBQUMsR0FBRyxDQUFDLGFBQWEsRUFBRSxJQUFJLENBQUMsU0FBUyxDQUFDLENBQUM7SUFDNUYsQ0FBQztJQUVELHFDQUFXLEdBQVgsVUFBWSxPQUFzQjtRQUM5QixFQUFFLENBQUMsQ0FBQyxPQUFPLENBQUMsU0FBUyxDQUFDLFlBQVksSUFBSSxJQUFJLENBQUMsR0FBRyxDQUFDLGFBQWEsSUFBSSxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQztZQUN4RSxJQUFJLENBQUMsYUFBYSxDQUFDLGFBQWEsQ0FBQyxJQUFJLENBQUMsSUFBSSxFQUFFLElBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQztRQUNoRSxDQUFDO0lBQ0wsQ0FBQztJQWxCUTtRQUFSLFlBQUssRUFBRTs7c0RBQWdCO0lBQ1E7UUFBL0Isa0JBQVcsQ0FBQyxpQkFBaUIsQ0FBQzs7cURBQWlCO0lBRnZDLGVBQWU7UUFIM0IsZ0JBQVMsQ0FBQztZQUNQLFFBQVEsRUFBRSxZQUFZO1NBQ3pCLENBQUM7eUNBTTJCLGlCQUFVLEVBQXdCLDhCQUFhO09BTC9ELGVBQWUsQ0FxQjNCO0lBQUQsc0JBQUM7Q0FBQSxBQXJCRCxJQXFCQztBQXJCWSwwQ0FBZSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7RGlyZWN0aXZlLCBFbGVtZW50UmVmLCBIb3N0QmluZGluZywgSW5wdXQsIE9uQ2hhbmdlcywgT25Jbml0LCBTaW1wbGVDaGFuZ2VzfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7U2Nyb2xsU2VydmljZX0gZnJvbSAnLi9zY3JvbGwuc2VydmljZSc7XG5cbkBEaXJlY3RpdmUoe1xuICAgIHNlbGVjdG9yOiAnW2ZmU2Nyb2xsXSdcbn0pXG5leHBvcnQgY2xhc3MgU2Nyb2xsRGlyZWN0aXZlIGltcGxlbWVudHMgT25Jbml0LCBPbkNoYW5nZXMge1xuICAgIEBJbnB1dCgpIGZmT3B0aW9uczogYW55O1xuICAgIEBIb3N0QmluZGluZygnY2xhc3MuZmYtc2Nyb2xsJykgY3NzQ2xhc3MgPSB0cnVlO1xuICAgIGl0ZW06IGFueTtcblxuICAgIGNvbnN0cnVjdG9yKHByaXZhdGUgX2VsOiBFbGVtZW50UmVmLCBwdWJsaWMgc2Nyb2xsU2VydmljZTogU2Nyb2xsU2VydmljZSkge1xuICAgIH1cblxuICAgIG5nT25Jbml0KCk6IHZvaWQge1xuICAgICAgICBpZiAoIXRoaXMuZmZPcHRpb25zKSB7XG4gICAgICAgICAgICB0aGlzLmZmT3B0aW9ucyA9IHt9O1xuICAgICAgICB9XG4gICAgICAgIHRoaXMuaXRlbSA9IHRoaXMuc2Nyb2xsU2VydmljZS5zdWJzY3JpYmVFbGVtZW50KHRoaXMuX2VsLm5hdGl2ZUVsZW1lbnQsIHRoaXMuZmZPcHRpb25zKTtcbiAgICB9XG5cbiAgICBuZ09uQ2hhbmdlcyhjaGFuZ2VzOiBTaW1wbGVDaGFuZ2VzKTogdm9pZCB7XG4gICAgICAgIGlmIChjaGFuZ2VzLmZmT3B0aW9ucy5jdXJyZW50VmFsdWUgJiYgdGhpcy5fZWwubmF0aXZlRWxlbWVudCAmJiB0aGlzLml0ZW0pIHtcbiAgICAgICAgICAgIHRoaXMuc2Nyb2xsU2VydmljZS5jaGFuZ2VPcHRpb25zKHRoaXMuaXRlbSwgdGhpcy5mZk9wdGlvbnMpO1xuICAgICAgICB9XG4gICAgfVxuXG59XG4iXX0=
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 04 2018 19:49:35 GMT+0300 (FLE Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
