@@ -76,5 +76,8 @@
   },
   "engines": {
     "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "travis": "^0.1.1"
   }
 }
