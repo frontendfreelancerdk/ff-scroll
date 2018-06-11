@@ -6,7 +6,23 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   fs = require('fs-extra'),
   runSequence = require('run-sequence'),
-  inlineResources = require('./tools/gulp/inline-resources');
+  inlineResources = require('./tools/gulp/inline-resources'),
+  protractor = require("gulp-protractor").protractor,
+  webdriver_update = require("gulp-protractor").webdriver_update;
+
+
+gulp.task('webdriver-update', webdriver_update);
+gulp.task('e2e', function(callback) {
+  gulp.src('tests/*.js')
+    .pipe(protractor({
+      configFile: 'protractor.conf.js',
+      args: ['--baseUrl', 'http://localhost:3000']
+    }))
+    .on('error', function (e) {
+      throw e
+    });
+});
+gulp.task('protractor', ['webdriver-update', 'e2e'], function(callback) {callback();});
 
 const rootFolder = path.join(__dirname);
 const srcFolder = path.join(rootFolder, 'src');
