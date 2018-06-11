@@ -13,7 +13,7 @@
     "playground:build": "tsc -p playground -w",
     "playground": "concurrently \"npm run build:watch\" \"npm run playground:build\" \"npm run lite\"",
     "test": "karma start",
-    "testtravis": "karma start --single-run",
+    "testtravis": "karma start --single-run && npm run e2e",
     "e2e": "gulp protractor",
     "patch": "npm version patch && cd src && npm version patch && cd ../ && cd dist && npm version patch"
   },
