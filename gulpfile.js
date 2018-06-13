@@ -6,13 +6,30 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   fs = require('fs-extra'),
   runSequence = require('run-sequence'),
-  inlineResources = require('./tools/gulp/inline-resources');
+  inlineResources = require('./tools/gulp/inline-resources'),
+  gulpProtractorAngular = require('gulp-angular-protractor');
 
 const rootFolder = path.join(__dirname);
 const srcFolder = path.join(rootFolder, 'src');
 const tmpFolder = path.join(rootFolder, '.tmp');
 const buildFolder = path.join(rootFolder, 'build');
 const distFolder = path.join(rootFolder, 'dist');
+
+
+
+gulp.task('protractor', function(callback) {
+  gulp
+    .src(['example_spec.js'])
+    .pipe(gulpProtractorAngular({
+      'configFile': 'protractor.conf.js',
+      'debug': false,
+      'autoStartStopServer': true
+    }))
+    .on('error', function(e) {
+      console.log(e);
+    })
+    .on('end', callback);
+});
 
 /**
  * 1. Delete /dist folder
@@ -233,3 +250,4 @@ gulp.task('default', ['build:watch']);
 function deleteFolder(folder) {
   return fs.removeSync(folder);
 }
+
