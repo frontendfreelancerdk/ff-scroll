@@ -14,13 +14,8 @@ node_js: 8.11.2
 language: node_js
 after_success:
 - npm run build
-- npm run patch
-- npm publish dist
 before_script:
 - npm install -g karma@2.0.0
-- npm install -g protractor
-- webdriver-manager update
-- webdriver-manager start --standalone
 before_install:
 - export CHROME_BIN=/usr/bin/google-chrome
 - export DISPLAY=:99.0
@@ -29,15 +24,15 @@ before_install:
 - sudo apt-get install -y libappindicator1 fonts-liberation
 - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 - sudo dpkg -i google-chrome*.deb
+before_deploy:
+- cd dist
+- npm version patch
 deploy:
   provider: npm
   email: tsarykmarat@gmail.com
+  skip_cleanup: true
   api_key:
     secure: ekA5EoYmZ09vcoIL6GS8SLISmeShfJkQJZUW9iqGeCFyMQXiEXPvR4Hx3LjV/7XzFCkXps31M91Oxzf8CR9iW7ahNvOGOR6l3f5iulyUQ2xjsJDwRujEsv9cZTh9xwhRGH9nrIoUDgyeylIX80eAcOVF3dPyYNZpM0Qsxnr51bgqfhM+ePAOKPjkhVB8HF+N3OtHLAIexLgxqq+kzNG8ExUzOSXEZFuUOP2G8CYVFVvTao03g+WjblUoP9Uk0cV14G4CrPQcgVADLOT6MO2rVeTB95lmmRW6yO6cs++9DMh011oMQmrWeZ5CsX00ysOpe+AuNFnirz3xP8L6zFb53wSr7o0yiB8p0QPhS7DENbboE8nda8khw5XdcqGHKyoYoxkLP/IOq77jI2dysc7QQuxhVmNYR6OTteddP4f8XjnFQgKISQHRC7+TTA9fwU3y8HeRsKOxExwzOYVztxTFjgtqyz2+yY4l12QHUUUnW+yW66Vc5dqu46i6/uaQvX5MgEWuEWmSCgL6b08JmYEwuHlfbzpN5U+tG2JZRiMMY6FGydpLH7JL7rjtuPkttE7+EZuaYQPpWP2SdIAa48fdHD8KR7nf7PD6gFkZlntJaq32HQ0+OPi9raUIGisn17WK8i9zMA2N7Wk+tGmNz6YzvMCUmdzc2t9cd4vW9s0Vops=
   on:
     tags: true
     repo: frontendfreelancerdk/ff-scroll
-addons:
-  apt:
-    packages:
-      - oracle-java8-set-default

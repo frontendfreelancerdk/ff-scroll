@@ -13,8 +13,7 @@
     "playground:build": "tsc -p playground -w",
     "playground": "concurrently \"npm run build:watch\" \"npm run playground:build\" \"npm run lite\"",
     "test": "karma start",
-    "testtravis": "karma start --single-run && npm run e2e",
-    "e2e": "gulp protractor",
+    "testtravis": "karma start --single-run",
     "patch": "npm version patch && cd src && npm version patch && cd ../ && cd dist && npm version patch"
   },
   "repository": {
@@ -48,7 +47,6 @@
     "core-js": "^2.4.1",
     "fs-extra": "^5.0.0",
     "gulp": "^3.9.1",
-    "gulp-protractor": "^4.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-rollup": "^2.15.0",
     "jasmine-core": "~2.6.2",
