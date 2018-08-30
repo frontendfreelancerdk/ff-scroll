@@ -1,16 +1,27 @@
-import { NgModule } from '@angular/core';
-import {ScrollDirective} from './scroll.directive';
-import {ScrollService} from './scroll.service';
+import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import { ScrollDirective } from './scroll.directive';
+import { ScrollService } from './scroll.service';
 
 @NgModule({
-  imports: [
-  ],
+  imports     : [],
   declarations: [
     ScrollDirective
   ],
   exports     : [
     ScrollDirective
-  ],
-  providers   : [ScrollService]
+  ]
 })
-export class FFScrollModule { }
+export class FFScrollModule {
+  constructor(@Optional() @SkipSelf() parentModule : FFScrollModule) {
+    if (parentModule) {
+      console.log(  'FFScrollModule is already loaded.');
+    }
+  }
+
+  static forRoot() : ModuleWithProviders {
+    return {
+      ngModule : FFScrollModule,
+      providers   : [ScrollService]
+    };
+  }
+}

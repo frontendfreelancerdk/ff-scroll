@@ -1,5 +1,5 @@
-import {Injectable, RendererFactory2} from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
+import { Injectable, RendererFactory2 } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 class Parent {
   nativeElement;
@@ -7,7 +7,7 @@ class Parent {
   offsets;
   elements = [];
   that;
-  resizeListener: BehaviorSubject<any> = new BehaviorSubject(0);
+  resizeListener : BehaviorSubject<any> = new BehaviorSubject(0);
 
   constructor(item, that) {
     this.nativeElement = item.options.parent;
@@ -55,22 +55,24 @@ function getOffset(elem, parent?) {
     }
   }
   return {
-    offsetTop: offsetTop,
-    offsetRight: offsetWidth + offsetLeft,
+    offsetTop   : offsetTop,
+    offsetRight : offsetWidth + offsetLeft,
     offsetBottom: offsetHeight + offsetTop,
-    offsetLeft: offsetLeft,
-    height: offsetHeight,
-    width: offsetWidth,
+    offsetLeft  : offsetLeft,
+    height      : offsetHeight,
+    width       : offsetWidth,
   };
 }
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ScrollService {
-  _timer: any;
-  _pageHeight: number;
-  _resizeListener: BehaviorSubject<any> = new BehaviorSubject(0);
-  _elements: any = [];
+  _timer : any;
+  _pageHeight : number;
+  _resizeListener : BehaviorSubject<any> = new BehaviorSubject(0);
+  _elements : any = [];
   _windowHeight = 0;
   _x = 0;
   _y = 0;
@@ -80,26 +82,27 @@ export class ScrollService {
   parents = [];
 
   defaultOptions = {
-    offsetTop: 50,
-    offsetLeft: 50,
-    offsetRight: 50,
-    offsetBottom: 50,
-    beforeView: 'beforeView',
-    inView: 'inView',
-    afterView: 'afterView',
-    animationClass: 'ff-animation',
-    animationDuration: 500,
-    parent: window,
+    offsetTop         : 50,
+    offsetLeft        : 50,
+    offsetRight       : 50,
+    offsetBottom      : 50,
+    beforeView        : 'beforeView',
+    inView            : 'inView',
+    afterView         : 'afterView',
+    animationClass    : 'ff-animation',
+    animationDuration : 500,
+    parent            : window,
     beforeViewCallBack: () => {
     },
-    inViewCallBack: () => {
+    inViewCallBack    : () => {
     },
-    afterViewCallBack: () => {
+    afterViewCallBack : () => {
     },
   };
 
-  constructor(_rendererFactory: RendererFactory2) {
+  constructor(_rendererFactory : RendererFactory2) {
     this._renderer = _rendererFactory.createRenderer(null, null);
+    console.log('create scroll service');
   }
 
   _init() {
@@ -138,7 +141,7 @@ export class ScrollService {
       item.offsets = getOffset(item.dom, item.options.parent);
     }
     let height = 0;
-    if(item.options.parent === window){
+    if (item.options.parent === window) {
       height = item.options.parent.innerHeight;
     } else {
       height = item.options.parent.offsetHeight;
@@ -149,14 +152,6 @@ export class ScrollService {
     if (coords.y > item.offsets.offsetBottom - item.options.offsetTop - scrollBox.scrollTop) {
       newState = 0;
     } else if (coords.y + height < item.offsets.offsetTop + item.options.offsetBottom - scrollBox.scrollTop) {
-      console.log(item);
-      console.log(coords.y);
-      console.log(height);
-      console.log(coords.y + height);
-      console.log(item.offsets.offsetTop);
-      console.log(item.options.offsetBottom);
-      console.log(-scrollBox.scrollTop);
-      console.log(item.offsets.offsetTop + item.options.offsetBottom - scrollBox.scrollTop);
       newState = 2;
     } else {
       newState = 1;
@@ -191,7 +186,7 @@ export class ScrollService {
       y = window.pageYOffset;
     }
     for (let i = 0, len = parent.elements.length; i < len; i++) {
-      this._getState(parent.elements[i], {y, x});
+      this._getState(parent.elements[i], { y, x });
     }
   }
 
@@ -206,36 +201,35 @@ export class ScrollService {
     const that = this;
     const parent = new Parent(item, that);
     this.parents.push(parent);
-    window['tet'] = parent.nativeElement;
-
     parent.nativeElement.addEventListener('scroll', () => {
-      console.log('scroll');
       this._scrollCalculate(parent);
     }, true);
+    return parent;
   }
 
   subscribe(el, options) {
     options = this._setDefaultOptions(options);
     const item = {
-      dom: el,
-      state: 3,
+      dom    : el,
+      state  : 3,
       options,
       offsets: null
     };
     const len = this.parents.length;
-    let flag = true;
+    let parent;
     if (len) {
       for (let i = 0; i < len; i++) {
         if (this.parents[i].nativeElement === item.options.parent) {
-          this.parents[i].elements.push(item);
-          flag = false;
+          parent = this.parents[i];
+          parent.elements.push(item);
           break;
         }
       }
     }
-    if (flag) {
-      this._createParentElement(item);
+    if (!parent) {
+      parent = this._createParentElement(item);
     }
+    this._scrollCalculate(parent);
 
     return item;
   }
