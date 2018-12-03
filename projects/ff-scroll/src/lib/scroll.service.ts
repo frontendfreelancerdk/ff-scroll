@@ -72,13 +72,8 @@ export class ScrollService {
   _timer : any;
   _pageHeight : number;
   _resizeListener : BehaviorSubject<any> = new BehaviorSubject(0);
-  _elements : any = [];
-  _windowHeight = 0;
-  _x = 0;
-  _y = 0;
   _renderer;
 
-  //TODO NEW VERSION!
   parents = [];
 
   defaultOptions = {

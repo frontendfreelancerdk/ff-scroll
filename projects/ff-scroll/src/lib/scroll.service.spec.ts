@@ -6,7 +6,7 @@ describe('Service: LanguagesService', () => {
   let service;
 
   beforeEach(() => TestBed.configureTestingModule({
-    providers: [ ScrollService ]
+    providers: [ScrollService]
   }));
 
   beforeEach(inject([ScrollService], s => {

@@ -14,14 +14,14 @@ import { ScrollService } from './scroll.service';
 export class FFScrollModule {
   constructor(@Optional() @SkipSelf() parentModule : FFScrollModule) {
     if (parentModule) {
-      console.log(  'FFScrollModule is already loaded.');
+      console.log('FFScrollModule is already loaded.');
     }
   }
 
   static forRoot() : ModuleWithProviders {
     return {
       ngModule : FFScrollModule,
-      providers   : [ScrollService]
+      providers: [ScrollService]
     };
   }
 }
