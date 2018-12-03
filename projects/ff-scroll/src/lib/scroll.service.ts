@@ -102,7 +102,6 @@ export class ScrollService {
 
   constructor(_rendererFactory : RendererFactory2) {
     this._renderer = _rendererFactory.createRenderer(null, null);
-    console.log('create scroll service');
   }
 
   _init() {

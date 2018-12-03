@@ -152,7 +152,8 @@
           "options": {
             "main": "projects/ff-scroll/src/test.ts",
             "tsConfig": "projects/ff-scroll/tsconfig.spec.json",
-            "karmaConfig": "projects/ff-scroll/karma.conf.js"
+            "karmaConfig": "projects/ff-scroll/karma.conf.js",
+            "codeCoverage": true
           }
         },
         "lint": {

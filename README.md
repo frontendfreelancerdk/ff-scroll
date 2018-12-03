@@ -1,29 +1,98 @@
-[![Build Status](https://travis-ci.org/frontendfreelancerdk/ff-scroll.svg?branch=master)](https://travis-ci.org/frontendfreelancerdk/ff-scroll)
+# ff-scroll
 
-# FfScrollApp
+## Installation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+To install this library, run:
 
-## Development server
+```bash
+$ npm install ff-scroll --save
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Consuming your library
 
-## Code scaffolding
+Once you have published your library to npm, you can import your library in any Angular application by running:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+$ npm install ff-scroll
+```
 
-## Build
+and then from your Angular `AppModule`:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-## Running unit tests
+import { AppComponent } from './app.component';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+// Import your library
+import { FFScrollModule } from 'ff-scroll';
 
-## Running end-to-end tests
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    // Specify your library as an import
+    FFScrollModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Further help
+Once your library is imported, you can use its directive in your Angular application:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```xml
+<!-- You can now use your library directive in app.component.html -->
+<h1>
+  {{title}}
+</h1>
+<div ffScroll></div>
+```
+
+You also can use Options Object. You just use attr ffOptions and some object with options:
+
+```xml
+<h1>
+  {{title}}
+</h1>
+<div ffScroll [ffOptions]={key:value}></div>
+```
+
+### Default properties which you can change : ###
+
+```typescript
+{
+      offsetTop: 50,
+      offsetLeft: 50,
+      offsetRight: 50,
+      offsetBottom: 50,
+      beforeView: 'beforeView',
+      inView: 'inView',
+      afterView: 'afterView',
+      animationClass: 'ff-animation',
+      animationDuration: 500
+}
+```
+
+
+## Development
+
+To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+
+```bash
+$ npm run build
+```
+
+To lint all `*.ts` files:
+
+```bash
+$ npm run lint
+```
+
+## License
+
+MIT © [Frontend Freelancer](mailto:marat@frontend-freelancer.com)
