@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/frontendfreelancerdk/ff-scroll.svg?branch=master)](https://travis-ci.org/frontendfreelancerdk/ff-scroll)
+
 # ff-scroll
 
 ## Installation
@@ -79,20 +81,6 @@ You also can use Options Object. You just use attr ffOptions and some object wit
 ```
 
 
-## Development
-
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
-```
-
 ## License
 
-MIT © [Frontend Freelancer](mailto:marat@frontend-freelancer.com)
+MIT © [Frontend Freelancer](mailto:developer@frontend-freelancer.com)
