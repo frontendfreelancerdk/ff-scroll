@@ -1,0 +1,20 @@
+sudo: required
+addons:
+  chrome: stable
+language: node_js
+node_js:
+- "10.5.0"
+script:
+- npm run test_lib
+- npm run build_lib
+before_deploy:
+- cd dist/ff-scroll
+deploy:
+  provider: npm
+  skip_cleanup: true
+  email: developer@frontend-freelancer.com
+  api_key:
+    secure: Y2ERc5xUv8a+ZQPmZl0L5jaUuLkO0aQYT/rl72fp1BgmK9PvcUE6voMkAPLl1+xTgYo/JGtL1oGwkSOv5plzM5IB7D3drUXsp0DacEg/DDlV4zT3xzeeri0iBQouAB4n+xqTDO03dzbZT/izGp2XjZswYubu2nEeqCwOEROK2Nait8Exx+Myqcl1UqtSw8dRhdTB44t/ozu1NzhLgV3NFzbjYRvgfoCZXMF2mXgpMzrCmbeRHpZmX+JnST+9H5vHGAzQABbzj6vSD9HlRj4Gks40Tu2kd7FpGx0Gp12QaOLbbZPqw+EyG4uEjPlFQu7BAkA1XP/kk+bHtF76ez0HgkWqikrelQ0S/k8Z5yYihbQGRpjOgZYnWuKSUKptYtObXSQE12h3XV50EdirPgB+4BqV8XhRYnTu5R6f1D9Wi/cZ0D1SxwAt1zrsy/4cILnfGtmYQVNDHD8hLz6JlvYU3o0lztiJ5U+GT55J2LAn1Wh36KRi9h2mUKGtObaTzg0pwmuo6fzHqOQ2wQnpxnISlAOd5FvfQ7dpy/RIuRmgKu7iMOsvO5ZbHRAlJM6CKbaoW9/j2RxANmdaB6RumshuoPk60510M4on54lcFNkVIMUtT+wlrpddgRbS4njbJEuiJB+WLW0xqP5R8rJ6a1wqbOddnKigKbzhYQGy2mehaS0=
+  on:
+    tags: true
+    branch: master
