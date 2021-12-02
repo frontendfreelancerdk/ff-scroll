@@ -1,12 +1,12 @@
 {
   "name": "scroll-workspace",
-  "version": "0.0.0",
+  "version": "13.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "ng serve ff-scroll",
+    "build": "ng build ff-scroll",
+    "watch": "ng build ff-scroll --watch --configuration development",
+    "test": "ng test ff-scroll"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +23,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~13.0.3",
     "@angular/cli": "~13.0.3",
     "@angular/compiler-cli": "~13.0.0",
     "@types/jasmine": "~3.10.0",
@@ -33,6 +34,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "ng-packagr": "^13.0.0",
     "typescript": "~4.4.3"
   }
 }
